@@ -26,32 +26,33 @@ public void add(int val){
 if(isEmpty() == true){
 this.array[spaceIndex] = val;
 }else{
-this.arraySize += 1;
-int[] tempExpand = new int[arraySize];
-System.arraycopy(this.array, 0, tempExpand, 0, this.arraySize - 1);
-tempExpand[arraySize - 1] = val;
-
-this.array = tempExpand;
+grow(1);
+this.array[arraySize - 1] = val;
 }//end else statement
 
 
 }//end add(int val) method
 
 public void add(int index, int val){
-  this.arraySize = this.arraySize + 1;
-  int[] pushArray = new int[arraySize];
-  System.arraycopy(this.array, (index), pushArray, (index + 1), (this.array.length - 1) - index);
-  System.arraycopy(this.array, 0, pushArray, 0, index);
-  pushArray[index] = val;
+  grow(1);
+  int[] temporary = this.array;
 
-  this.array = pushArray;
+  //start of for loops
+  for(int count = index; count < arraySize - 1; count++){
+    System.out.println(Arrays.toString(temporary));
+    this.array[count + 1] = temporary[count];
+  }//end for loops
+  this.array[index] = val;
 }//end add(int index, int val) method
+
 
 public void grow(int n){
 this.arraySize = this.arraySize + n;
 int[] tempArray = new int[this.arraySize];
 
-System.arraycopy(this.array, 0, tempArray, 0, this.array.length);
+for(int i = 0; i < this.array.length; i++){
+  tempArray[i] = this.array[i];
+}//end for loop
 
 this.array = tempArray;
 
