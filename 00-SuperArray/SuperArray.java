@@ -6,7 +6,6 @@ private int arraySize;
 private int spaceIndex;
 private int[] array;
 private boolean space;
-
 //----------------------------
 //Constructor method 1
 public SuperArray(int size){
@@ -33,17 +32,29 @@ this.array[arraySize - 1] = val;
 
 }//end add(int val) method
 
+
 public void add(int index, int val){
   grow(1);
-  int[] temporary = this.array;
+  int[] temporary = copyArray();
 
-  //start of for loops
+  //for loops of pushing elements in the array forward to make up space for the val
   for(int count = index; count < arraySize - 1; count++){
-    System.out.println(Arrays.toString(temporary));
     this.array[count + 1] = temporary[count];
   }//end for loops
   this.array[index] = val;
+  System.out.println("Added value of " + val + "in the index of " + index);
 }//end add(int index, int val) method
+
+
+
+public int[] copyArray(){
+  int[] temporaryArray = new int[arraySize];
+
+  for(int indexCount = 0; indexCount < this.array.length; indexCount++){
+  temporaryArray[indexCount] = this.array[indexCount];
+  }//end for loops
+  return temporaryArray;
+}
 
 
 public void grow(int n){
@@ -55,6 +66,7 @@ for(int i = 0; i < this.array.length; i++){
 }//end for loop
 
 this.array = tempArray;
+System.out.println("Grew the size of the array from " + (arraySize - n) + "to " + arraySize);
 
 }//end grow method
 
@@ -80,16 +92,25 @@ public boolean isEmpty(){
 }//end isEmpty method
 
 public void remove(int index){
- this.arraySize = this.arraySize - 1;
- int[] removeIndex = new int[arraySize];
- if(index == 0){
- System.arraycopy(this.array, 1, removeIndex, 0, this.array.length - 2);
-}else{
- System.arraycopy(this.array, index, removeIndex, index - 1, (this.array.length - 1) - index);
- System.arraycopy(this.array, 0, removeIndex, 0, index);
-}//end else statement
-this.array = removeIndex;
+arraySize -= 1;
+int[] tempRemove = new int[arraySize];
+
+//Copying all value in original index to temp array up to the index user wanted to remove
+for(int count = 0; count < index; count++){
+  tempRemove[count] = this.array[count];
+}//end for loop
+
+//Copying all value after the given index
+for(int count = index + 1; count < arraySize; count++){
+  tempRemove[count - 1] = this.array[count];
+}//end for loop
+
+ this.array = tempRemove;
+ System.out.println("Removed index " + index);
 }//end remove method
+
+
+
 
 public void fillArray(){
   for(int arrayCount = 0; arrayCount < this.array.length; arrayCount++){
@@ -99,7 +120,7 @@ public void fillArray(){
 }//end fillArray method
 
 public String toString(){
-  return ("Numbers: " + Arrays.toString(this.array));
+  return ("Numbers: " + Arrays.toString(this.array) + "\n");
 }//end toString  method
 
 }//end class

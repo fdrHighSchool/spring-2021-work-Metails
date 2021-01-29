@@ -4,16 +4,25 @@ public class Driver{
 
     superarray1.fillArray();
     System.out.println(superarray1);
-    //superarray1.grow(1);
-    //System.out.println(superarray1);
-    superarray1.add(0,2);
+
+    superarray1.grow(1);
     System.out.println(superarray1);
-    //superarray1.remove(2);
-    //System.out.println(superarray1);
-    //superarray1.remove(0);
-    //System.out.println(superarray1);
+
+    superarray1.add(6,85);
+    System.out.println(superarray1);
+
+    superarray1.remove(2);
+    System.out.println(superarray1);
+
+    superarray1.remove(0);
+    System.out.println(superarray1);
+
+    superarray1.remove(6);
+    System.out.println(superarray1);
 
     superarray1.isEmpty();
+
+
 
     //superarray1.add(46);
     //System.out.println("After using the add method: " + superarray1);
