@@ -42,7 +42,7 @@ public void add(int index, int val){
     this.array[count + 1] = temporary[count];
   }//end for loops
   this.array[index] = val;
-  System.out.println("Added value of " + val + "in the index of " + index);
+  System.out.println("Added value of " + val + " in the index of " + index);
 }//end add(int index, int val) method
 
 
@@ -66,7 +66,7 @@ for(int i = 0; i < this.array.length; i++){
 }//end for loop
 
 this.array = tempArray;
-System.out.println("Grew the size of the array from " + (arraySize - n) + "to " + arraySize);
+System.out.println("Grew the size of the array from " + (arraySize - n) + " to " + arraySize);
 
 }//end grow method
 
@@ -90,6 +90,15 @@ public boolean isEmpty(){
 
   return this.space;
 }//end isEmpty method
+
+public void minus(int index, int amount){
+  if(this.array[index] < amount){
+    System.out.println("Unable to do so because you don't have enough items to take away");
+  }else{
+    System.out.println("Took away " + amount + " items in the position of " + index + " in the backpack");
+  this.array[index] -= amount;
+  }//end else statement
+}//end minus method
 
 public void remove(int index){
 arraySize -= 1;
@@ -120,7 +129,7 @@ public void fillArray(){
 }//end fillArray method
 
 public String toString(){
-  return ("Numbers: " + Arrays.toString(this.array) + "\n");
+  return (Arrays.toString(this.array) + "\n");
 }//end toString  method
 
 }//end class
