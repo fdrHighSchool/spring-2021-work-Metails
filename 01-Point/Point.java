@@ -71,10 +71,10 @@ import java.util.*;
 
    }//end isCollinear method
 
-   /*public String toString(){
+   public String toString(){
 
      return ("(" + this.x + ", " + this.y + ")");
 
    }//end toString methods
-*/
+
  }//end class
