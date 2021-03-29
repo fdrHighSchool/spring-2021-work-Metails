@@ -1,0 +1,19 @@
+9.3: 
+Overriding methods occurs when a child class modify the public method from it's parent class and make it as it's own method(overriding it).
+(To override a inherited method, the child class must consist of the method with the same method name)
+
+Overriding and Overloading are not the same thing;  Overloading a method is when several methods have the same name but the parameter types, order, 
+or number are different.
+
+9.4:
+
+The super method could be used to force call out the method in the parent class/Accessing private instance variable from the parent class need the super method as 
+well(ex:super.variable)
+
+Using super method to call out parent constructor method: super(); / super(arguments);
+
+Using super method to call out methods within the parent class: super.method();
+
+9.5:
+A inheritance hierarchy could be form when multiple sub classes is inferited from one parent classes
+
