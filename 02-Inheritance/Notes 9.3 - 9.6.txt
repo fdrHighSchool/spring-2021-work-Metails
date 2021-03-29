@@ -17,3 +17,14 @@ Using super method to call out methods within the parent class: super.method();
 9.5:
 A inheritance hierarchy could be form when multiple sub classes is inferited from one parent classes
 
+9.6:
+A inheritance-based polymorphism is when all the subclasses that's from a parent class in which they all have their own behaviors.
+
+In Java an object variable has both a declared (compile-time) type and an actual (run-time) type. The declared (compile-time) type of 
+a variable is the type that is used in the declaration. The actual (run-time) type is the class that actually creates the object using new.
+
+At compile time, the compiler uses the declared type to check that the methods you are trying to use are available to an object of that
+type. The code won’t compile if the methods don’t exist in that class or some parent class of that class. 
+
+When a method is called at run-time the first place that is checked for that method is the class that created the object. If the method 
+is found there it will be executed. If not, the parent of that class will be checked and so on until the method is found.
