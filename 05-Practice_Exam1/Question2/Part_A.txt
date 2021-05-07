@@ -1,0 +1,24 @@
+Part A:
+
+public static int getPeakIndex( int [ ] array )
+{
+int peak = 0;
+for(int i = 1; i < array.length - 1; i++ )
+{
+
+if( array[ i ] > array[ i - 1 ] && array [ i ] > array [ i + 1 ])
+{
+
+peak = i;
+
+}else{
+
+peak = -1;
+
+}//end else statement
+
+}//end for loop
+
+return peak;
+
+}//end method
