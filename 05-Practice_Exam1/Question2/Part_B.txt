@@ -7,6 +7,4 @@ int peak = getPeakIndex( array );
 
 return ( isIncreasing(array, peak) && isDecreasing(array, array.length - 1))
 
-}//end of the second for loop
-
 }//end method
