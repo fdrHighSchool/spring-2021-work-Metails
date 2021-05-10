@@ -13,7 +13,7 @@ for(int i = 0; i < temperary.length; i++)
 for(int x = 0; x < temperary[0].length; x++)
 {
 
-temperary = computeTemp(i, x);
+temperary[i][x] = computeTemp(i, x);
 
 if(Math.abs(temperary[i][x] - this.temps[i][x] > tolerance && check == 0){
 
