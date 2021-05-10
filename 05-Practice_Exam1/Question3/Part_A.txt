@@ -1,0 +1,18 @@
+Part A:
+
+private double computeTemp ( int row, int col )
+{
+
+if(row == 0 || row = this.temp.length - 1 || col == 0 || col == this.temp[ 0 ].length - 1)
+{
+
+return this.temp[row] [col];   
+
+} else {
+
+return (this.temp[row - 1][col] + this.temp[row + 1][col] + this.temp[row][col - 1] + this.temp[row][col + 1]) / 4
+
+}//end else statement
+
+
+}//end method

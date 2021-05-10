@@ -1,0 +1,34 @@
+Part B:
+
+public boolean updateAllTemps (double tolerance)
+{
+
+double [ ] [ ] temperary = new double [this.temps.length] [this.temps[0].length];
+boolean checkTolerance = true;
+int check = 0;
+
+for(int i = 0; i < temperary.length; i++)
+{
+
+for(int x = 0; x < temperary[0].length; x++)
+{
+
+temperary = computeTemp(i, x);
+
+if(Math.abs(temperary[i][x] - this.temps[i][x] > tolerance && check == 0){
+
+checkTolerance = false;
+
+check++;
+
+}//end if statement
+
+}//end 2nd for loop
+
+}//end for loop
+
+this.temps = temperary;
+
+return checkTolerance
+
+}//end method
