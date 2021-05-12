@@ -1,0 +1,30 @@
+Part A:
+
+public boolean record(int score)
+{
+
+boolean check = false;
+
+for(int i = 0; i < scoreList.size(); i++)
+{
+
+if(scoreList.get(i).getScore == score)
+{
+
+scoreList.get(i).increment();
+
+}else{
+
+if(score < scoreList.get().getScore)
+
+scoreList.add(new scoreInfo(score));
+
+check = true;
+
+}//end else statement
+
+}//end for loop
+
+return check;
+
+}//end method
