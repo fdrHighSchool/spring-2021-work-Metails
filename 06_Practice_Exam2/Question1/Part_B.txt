@@ -1,0 +1,15 @@
+Part B:
+
+public static boolean isLongSeq (int n){
+
+if(hailstoneLength( n ) > n){
+
+return true
+
+}else{
+
+return false;
+
+}//end else statement
+
+}//end method
