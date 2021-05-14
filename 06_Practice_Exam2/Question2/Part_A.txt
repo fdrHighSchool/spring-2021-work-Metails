@@ -1,0 +1,40 @@
+public class GameSpinner {
+
+private int sector;
+private int previousRun;
+private int count;
+
+public GameSpinner(int sector){
+
+this.sector = sector;
+this.currentRun = 0;
+this.count = 0;
+
+}//end constructor method 
+
+public int spin(){
+
+int a = ((Math.random() * this.sector) + 1);
+if(this.previousRun == a){
+
+this.count++;
+
+}else{
+
+this.count = 1;
+
+}//end else statement
+
+this.previousRun = a;
+
+return this.previousRun;
+
+}//end spin method 
+
+public int currentRun(){
+
+return this.count;
+
+}//end currentRun method
+
+}//end class 
