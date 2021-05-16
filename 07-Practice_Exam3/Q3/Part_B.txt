@@ -1,0 +1,25 @@
+Part B:
+
+public ArrayList<MemberInfo> removeMembers(int year){
+
+ArrayList<MemberInfo> gradList = new ArrayList<MemberInfo>();
+
+for(int i = this.memberList.size() - 1; i >= 0; i--){
+
+if(this.memberList.get(i).getGradYear <= year){
+
+if(this.memberList.get(i).inGoodStanding()){
+
+gradList.add(this.memberList.get(i));
+
+}//end if statement
+
+this.memberList.remove(i);
+
+}//end method 
+
+}//end for loops  
+
+return gradList;
+
+}//end removeMembers method 
