@@ -1,0 +1,16 @@
+Part A:
+
+Private String recombine(String word1, String word2)
+{
+
+String newWord;
+
+int halfOfWord1 = (word1.length / 2);
+int halfOfWord2 = (word2.length / 2);
+
+String newWord += word1.substring(0, halfOfWord1);
+String newWord += word2.substring(halfOfWord2);
+
+return newWord; 
+
+}//end method

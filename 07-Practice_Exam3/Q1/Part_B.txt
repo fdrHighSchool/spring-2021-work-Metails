@@ -1,0 +1,33 @@
+Part B
+
+public String findBetterGuess ( String guess1, String guess2)
+{
+
+if(socreGuess(guess1) == scoreGuess(guess2){
+
+if(guess1.compareTo(guess2) < 0){
+
+return guess2;
+
+}else{
+
+return guess1;
+
+}//end else statement
+
+}else{
+
+if(scoreGuess(guess1) > scoreGuess(guess2)){
+
+return Integer.toString(scoreGuess(guess1));
+
+}else{
+
+return Integer.toString(scoreGuess(guess2));
+
+
+}//end else
+
+}//end else statement
+
+}//end method

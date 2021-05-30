@@ -1,0 +1,43 @@
+Part A:
+
+public class CombinedTable{
+
+private int totalSeats;
+private int totalView;
+private SingleTable table1;
+private SingleTable table2;
+
+public CombinedTable(SingleTable table1, SingleTable table2){
+
+this.totalSeats = (table1.getNumSeats() + table2.getNumSeats()) - 2;
+this.totalView = table1.getView	Quality() + table2.getViewQuality();
+this.table1 = table1;
+this.table2 = table2;
+
+}//end constructor class
+
+public boolean canSeat(int amount){
+
+return (amount < this.totalSeats):
+
+}//end canSeat method
+
+public int getDesirability(){
+
+int desirability = 0;
+
+if(this.table1.getHeight == this.table2.getHeight){
+
+desirability = totalView / 2;
+
+}else{
+
+desirability = (totalView / 2) - 10;
+
+}//end else statement
+
+return desirability;
+
+}//end getDesirability method
+
+}//end class

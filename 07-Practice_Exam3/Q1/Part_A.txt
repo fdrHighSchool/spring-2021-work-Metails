@@ -1,0 +1,23 @@
+Part A:
+
+public int scoreGuess (String guess)
+{
+
+int count = 0;
+
+for(int i = 0; i < this.secret; i++) {
+
+if(guess.equals(this.secret.substring(i,i+1))
+{
+
+count++;
+
+}//end if statement
+
+}//end for loop
+
+
+return (count * guess.length * guess.length);
+
+
+}//end scoreGuess method 

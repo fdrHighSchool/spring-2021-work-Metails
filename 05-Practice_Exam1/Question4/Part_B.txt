@@ -1,0 +1,13 @@
+Part B:
+
+public void recordScores(int [] stuScores)
+{
+
+for(int i = 0; i < stuScores.length; i++)
+{
+
+record(stuScores[i]);
+
+}//end for loop
+
+}

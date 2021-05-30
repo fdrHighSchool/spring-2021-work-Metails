@@ -1,0 +1,30 @@
+9.3: 
+Overriding methods occurs when a child class modify the public method from it's parent class and make it as it's own method(overriding it).
+(To override a inherited method, the child class must consist of the method with the same method name)
+
+Overriding and Overloading are not the same thing;  Overloading a method is when several methods have the same name but the parameter types, order, 
+or number are different.
+
+9.4:
+
+The super method could be used to force call out the method in the parent class/Accessing private instance variable from the parent class need the super method as 
+well(ex:super.variable)
+
+Using super method to call out parent constructor method: super(); / super(arguments);
+
+Using super method to call out methods within the parent class: super.method();
+
+9.5:
+A inheritance hierarchy could be form when multiple sub classes is inferited from one parent classes
+
+9.6:
+A inheritance-based polymorphism is when all the subclasses that's from a parent class in which they all have their own behaviors.
+
+In Java an object variable has both a declared (compile-time) type and an actual (run-time) type. The declared (compile-time) type of 
+a variable is the type that is used in the declaration. The actual (run-time) type is the class that actually creates the object using new.
+
+At compile time, the compiler uses the declared type to check that the methods you are trying to use are available to an object of that
+type. The code won’t compile if the methods don’t exist in that class or some parent class of that class. 
+
+When a method is called at run-time the first place that is checked for that method is the class that created the object. If the method 
+is found there it will be executed. If not, the parent of that class will be checked and so on until the method is found.

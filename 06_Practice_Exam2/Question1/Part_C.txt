@@ -1,0 +1,19 @@
+Part C:
+
+public static double propLong (int n){
+
+for(int i = 1; i <= n; i++){
+
+int count = 0;
+
+if(isLongSeq(i)){
+
+count++;
+
+}//end if statement
+
+}//end for loop
+
+return (count / n);
+
+}//end method
