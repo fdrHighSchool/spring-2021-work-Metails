@@ -1,7 +1,7 @@
 //Kinda wanted to make a small simulation on a crafting system in a game that I played
-//Kinda got too lazy to work on abilites and stuff too so yea :P
+//Was gonna add abilities and stuff but I wasn't able to even get the progress bar to increase smoothly so I gave up 
 int progress = 0;
-int progressHQ = 230;
+int progressHQ = 0;
 int totalDurability = 45;
 int currentDurability = 45;
 int cost = 10;
@@ -36,11 +36,36 @@ void draw(){
  //----------------------------------------------------------------
  //----------------------------------------------------------------
 
-  if(inGame){
- //Abilities
- if(keyPressed && key == '1'){
+ 
+ //----------------------------------------------------------------
+ //Progress display boxes
+  fill(134,249,135);
+  rect(0,10,progress,15,7);//progress bar
+  noFill();
+  text(getPercent(progress) + "%", 385, 18);
+  text("Completion", 450, 18);
+  noFill();
+  
+  fill(102,187,252);
+  rect(0,50,progressHQ,15,7);//progressHQ bar
+  text(getPercent(progressHQ) + "%", 385, 55);
+  text("High quality rate", 450, 55);
+  noFill();
+  
+  fill(89,102,112);
+  rect(5,85,250,30);
+  noFill();
+  fill(230,217,187);
+  text(currentDurability + "/" + totalDurability, 5, 90);
+  text(" Durability", 50, 90);
+  noFill();
+ //----------------------------------------------------------------
+ 
+ if(inGame){
+  //Abilities
+ if( key == '1' && keyPressed){
    
-   progress += 100;
+   progress += 150;
    
    if(ability3){
 
@@ -71,57 +96,44 @@ void draw(){
   abilityDuration = 1;
    
  }//end abilites 3
+//------------------------------------------------------------------------------------------
+
+
+  if(progressHQ >= 730){
+    
+    progressHQ =730;
+    
+  }//end if 
  
- //----------------------------------------------------------------
- //Progress display boxes
-  fill(134,249,135);
-  rect(25,10,progress,15,7);//progress bar
-  noFill();
-  text(getPercent(progress) + "%", 385, 18);
-  text("Completion", 450, 18);
-  noFill();
-  
-  fill(102,187,252);
-  rect(25,50,progressHQ,15,7);//progressHQ bar
-  text(getPercent(progressHQ) + "%", 385, 55);
-  text("High quality rate", 450, 55);
-  noFill();
-  
-  fill(89,102,112);
-  rect(5,85,250,30);
-  noFill();
-  fill(230,217,187);
-  text(currentDurability + "/" + totalDurability, 5, 90);
-  text(" Durability", 50, 90);
-  noFill();
- //----------------------------------------------------------------
-  if(progress >= 685){
+  if(progress >= 730){
     
+    progress = 730;
     
-    if((int)(Math.random() * 100) + 1 >= progressHQ/685.0 * 100){
+    if((int)(Math.random() * 100) + 1 >= progressHQ/730.0 * 100){
+      //System.out.println("Im running baby1");
       text("You've successfully synthesised a normal quality of this item",280, 400);
       
     }else{
       text("You've successfully synthesized a High quality of this item",280, 400);
       
     }//end else statement
-
+    inGame = false;
   }//end 1st if statement
  
-  if(currentDurability == 0){
-    
+  if(currentDurability <= 0){
+    currentDurability = 0;
     text("You've failed to synthesis this item",300, 400);
+    inGame = false;
     
   }//end if statement
    
-      inGame = false;
-  }//end check if in game statement
-  
+
+ }//end in game
 }//end draw method
 
 String getPercent(int progress){
   
-  float result = (progress/685.0 * 100);
+  float result = (progress/730.0 * 100);
   result = round(result);
   return String.valueOf(result);
   
