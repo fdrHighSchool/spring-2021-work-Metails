@@ -61,9 +61,22 @@ void draw(){
   noFill();
  //----------------------------------------------------------------
  
- if(inGame){
+ 
+}//end draw method
+
+String getPercent(int progress){
+  
+  float result = (progress/730.0 * 100);
+  result = round(result);
+  return String.valueOf(result);
+  
+}//end get percent method 
+
+void keyPressed(){
+  
+  if(inGame){
   //Abilities
- if( key == '1' && keyPressed){
+ if( key == '1'){
    
    progress += 150;
    
@@ -83,7 +96,7 @@ void draw(){
    
  }//end abilites 1
  
-  if(keyPressed && key == '2'){
+  if(key == '2'){
    
    progressHQ += 50;
    currentDurability -= cost;
@@ -108,9 +121,9 @@ void draw(){
   if(progress >= 730){
     
     progress = 730;
+    currentDurability = 0;
     
     if((int)(Math.random() * 100) + 1 >= progressHQ/730.0 * 100){
-      //System.out.println("Im running baby1");
       text("You've successfully synthesised a normal quality of this item",280, 400);
       
     }else{
@@ -118,23 +131,16 @@ void draw(){
       
     }//end else statement
     inGame = false;
-  }//end 1st if statement
+  }else{
  
   if(currentDurability <= 0){
     currentDurability = 0;
     text("You've failed to synthesis this item",300, 400);
     inGame = false;
-    
+    }//end else
   }//end if statement
    
 
  }//end in game
-}//end draw method
-
-String getPercent(int progress){
   
-  float result = (progress/730.0 * 100);
-  result = round(result);
-  return String.valueOf(result);
-  
-}//end get percent method 
+}
